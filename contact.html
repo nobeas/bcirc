@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact | B-CIRC</title>
+<meta name="description" content="Book a technical review, submit a sample, or request the B-CIRC dossier.">
+<meta property="og:title" content="Contact | B-CIRC">
+<meta property="og:description" content="Book a technical review, submit a sample, or request the B-CIRC dossier.">
+<meta property="og:type" content="website">
+<link rel="icon" href="assets/img/logo.svg">
+<link rel="stylesheet" href="assets/css/site.css">
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="assets/js/theme.js"></script>
+</head>
+<body class="font-sans text-slate-700 antialiased">
+<div id="site-header"></div>
+<section class="hexbg border-b border-mint-200 pt-28 pb-14 lg:pt-36 lg:pb-16">
+  <div class="mx-auto max-w-7xl px-5 lg:px-8">
+    <p class="text-xs font-semibold uppercase tracking-[0.18em] text-ochre-600">Contact</p>
+    <h1 class="mt-4 max-w-4xl font-serif text-4xl font-bold leading-tight text-forest-800 sm:text-5xl">Talk to a materials chemist</h1>
+    <p class="mt-5 max-w-3xl text-lg leading-relaxed text-slate-600">Bring a feedstock, a spec you need to hit, or a result you cannot explain. We will tell you honestly whether this is something the lab can help with.</p>
+  </div>
+</section>
+<section class="py-16 lg:py-20"><div class="mx-auto max-w-5xl px-5 lg:px-8">
+  <div class="grid gap-6 md:grid-cols-3">
+    <div class="rounded-2xl bg-white p-7 shadow-sm ring-1 ring-mint-200">
+      <h2 class="font-semibold text-forest-800">Book a technical review</h2>
+      <p class="mt-2 text-sm text-slate-600">45 minutes, video or in person. Pick a slot and tell us what you are working on.</p>
+      <button data-open="booking" class="mt-5 w-full rounded-lg bg-forest-800 py-2.5 text-sm font-semibold text-white transition hover:bg-forest-700">Pick a slot</button>
+    </div>
+    <div class="rounded-2xl bg-white p-7 shadow-sm ring-1 ring-mint-200">
+      <h2 class="font-semibold text-forest-800">Submit a sample</h2>
+      <p class="mt-2 text-sm text-slate-600">BET, GC-MS, ICP-MS, gas MS, TPD or TPR. Raw data released with the report.</p>
+      <button data-open="booking" data-subject="Analysis request: general" class="mt-5 w-full rounded-lg bg-mint-100 py-2.5 text-sm font-semibold text-forest-800 transition hover:bg-forest-800 hover:text-white">Send sample details</button>
+    </div>
+    <div class="rounded-2xl bg-white p-7 shadow-sm ring-1 ring-mint-200">
+      <h2 class="font-semibold text-forest-800">Request the dossier</h2>
+      <p class="mt-2 text-sm text-slate-600">For funders, utilities, mining partners and licensees. Shared under NDA.</p>
+      <button data-open="dossier" class="mt-5 w-full rounded-lg bg-mint-100 py-2.5 text-sm font-semibold text-forest-800 transition hover:bg-forest-800 hover:text-white">Request access</button>
+    </div>
+  </div>
+  <div class="mt-10 rounded-2xl border border-mint-200 bg-mint-50 p-7">
+    <h2 class="font-serif text-xl font-bold text-forest-800">Direct</h2>
+    <p class="mt-3 font-mono text-sm text-slate-600" id="contactBlock"></p>
+  </div>
+</div></section>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  var c = window.SITE.contact;
+  document.getElementById("contactBlock").innerHTML =
+    c.pi + "<br>" + (c.piNote ? c.piNote + "<br>" : "") + (c.institution ? c.institution + "<br>" : "") +
+    '<a class="underline hover:text-forest-800" href="mailto:' + c.email + '">' + c.email + "</a><br>" + c.city;
+});
+</script>
+<div id="site-footer"></div>
+<script src="assets/js/content.js"></script>
+<script src="assets/js/site.js"></script>
+</body>
+</html>
