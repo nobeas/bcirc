@@ -206,7 +206,31 @@ window.SITE = {
     commercial: "Commercial path: licensing the coal to FJH graphene to Si@Carbon process to regional manufacturers, with the supply chain model replicable in Zambia, Zimbabwe and Mozambique. IP is filed in Botswana and held there."
   },
 
-  /* ---------- 11. team ----------
+  /* ---------- 11. research areas ----------
+     Copy a block to add an area, delete one to remove it.               */
+  areas: {
+    heading: "Research areas",
+    intro: "Four lines of work sit under the platform. Each one runs as contract research as well as feeding B-CIRC.",
+    items: [
+      { title: "Battery electrochemistry",
+        body: "Half-cell and full-cell assembly, galvanostatic cycling, rate capability and coulombic efficiency, impedance spectroscopy, and in-situ XRD to watch silicon expand and contract while it cycles.",
+        tags: ["Coin cells", "EIS", "In-situ XRD"] },
+
+      { title: "Gasification",
+        body: "Fixed-bed and fluidised configurations, sweeping temperature, equivalence ratio and residence time. Syngas composition comes off an online mass spectrometer, so the H₂/CO ratio is watched as it shifts rather than inferred afterwards.",
+        tags: ["Co-gasification", "Online gas MS", "Syngas to CVD precursor"] },
+
+      { title: "Pyrolysis",
+        body: "Slow and fast pyrolysis of coal and biomass, with yields reported across gas, tar, bio-oil and char. Hard carbon for sodium-ion anodes comes out of this line at 1,200 °C under nitrogen.",
+        tags: ["Hard carbon", "Bio-oil", "Tar speciation by GC-MS"] },
+
+      { title: "Heterogeneous catalysis",
+        body: "Catalyst formulation and support selection, with the acid-base and redox characterisation that explains why a formulation works: NH₃ and CO₂ TPD for site strength, H₂-TPR for reducibility, TPO for coke on spent catalyst, and activity testing in a packed bed.",
+        tags: ["Waste-derived supports", "Deactivation studies", "Contract R&D under NDA"] }
+    ]
+  },
+
+  /* ---------- 12. team ----------
      photo: the file name of a picture you uploaded to assets/img/
             leave it as "" and the card shows the person's initials instead.
      link:  an ORCID, Google Scholar, LinkedIn or university page. "" hides it. */
@@ -216,21 +240,21 @@ window.SITE = {
       { name: "Dr Isaac N. Beas",
         role: "Principal investigator",
         org:  "",
-        photo: "",
+        photo: "isaac-beas.jpg",
         focus: "Flash Joule heating of Botswana coal to graphene, and Si@carbon device development. Co-author of the published TiO₂/NHCS photoelectrochemical proof of concept, which appeared under the name I. Nongwe.",
         link: "" },
 
       { name: "Chawangwa Damba",
         role: "Co-investigator",
         org:  "BITRI",
-        photo: "",
+        photo: "chawangwa-damba.jpg",
         focus: "EDIT: one line on what this person leads on the project.",
         link: "" },
 
       { name: "Ledwaba Kabelo",
         role: "Co-investigator",
         org:  "University of South Africa",
-        photo: "",
+        photo: "ledwaba-kabelo.jpg",
         focus: "EDIT: one line on what this person leads on the project.",
         link: "" },
 
@@ -259,7 +283,7 @@ window.SITE = {
     ]
   },
 
-  /* ---------- 12. lab photographs ----------
+  /* ---------- 13. lab photographs ----------
      Upload the picture files to assets/img/ first, then list them here.
      Only the file name goes in "file", not the whole path.
      An empty list hides the whole gallery section.                        */
@@ -273,7 +297,7 @@ window.SITE = {
     ]
   },
 
-  /* ---------- 13. news ----------
+  /* ---------- 14. news ----------
      Newest first. Copy a block to add a post. Keep the date as YYYY-MM-DD.  */
   news: [
     { date:"2026-04-15", tag:"Submission",
@@ -284,7 +308,7 @@ window.SITE = {
       body:"The lead architecture cleared its 700 mAh g⁻¹ target with coulombic efficiency at 98.4% after the fifth cycle. In-situ XRD put volume change at roughly 22%, comfortably inside the 30% design ceiling." }
   ],
 
-  /* ---------- 14. newsletter and footer ---------- */
+  /* ---------- 15. newsletter and footer ---------- */
   newsletter: {
     heading: "Progress notes from the lab",
     body: "Monthly. New device results, preprints as they go up, course dates, and write-ups of the runs that did not work."

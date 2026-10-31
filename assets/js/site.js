@@ -255,6 +255,22 @@
     '<p class="mt-8 text-sm text-mint-200/70">' + esc(S.partners.commercial) + "</p>";
   };
 
+  R.areas = function () {
+    var a = S.areas || { items: [] };
+    return '<h2 class="font-serif text-3xl font-bold text-forest-800 sm:text-4xl">' + esc(a.heading) + "</h2>" +
+      '<p class="mt-4 max-w-3xl text-lg text-slate-600">' + esc(a.intro) + "</p>" +
+      '<div class="mt-10 grid gap-5 sm:grid-cols-2">' + (a.items || []).map(function (it, i) {
+        var tags = (it.tags || []).map(function (t) {
+          return '<span class="rounded-md bg-mint-100 px-2 py-0.5 text-[11px] font-medium text-forest-700">' + esc(t) + "</span>";
+        }).join("");
+        return '<article class="reveal flex flex-col rounded-2xl bg-white p-7 shadow-sm ring-1 ring-mint-200 transition hover:ring-forest-600">' +
+          '<span class="font-mono text-xs text-ochre-600">' + ("0" + (i + 1)) + "</span>" +
+          '<h3 class="mt-2 font-serif text-xl font-bold text-forest-800">' + esc(it.title) + "</h3>" +
+          '<p class="mt-3 flex-1 leading-relaxed text-slate-600">' + esc(it.body) + "</p>" +
+          (tags ? '<div class="mt-5 flex flex-wrap gap-2">' + tags + "</div>" : "") + "</article>";
+      }).join("") + "</div>";
+  };
+
   R.team = function () {
     var people = (S.team && S.team.people) || [];
     return '<p class="max-w-3xl text-lg leading-relaxed text-slate-600">' + esc(S.team.intro) + "</p>" +
