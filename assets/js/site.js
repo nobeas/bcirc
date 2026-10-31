@@ -255,6 +255,46 @@
     '<p class="mt-8 text-sm text-mint-200/70">' + esc(S.partners.commercial) + "</p>";
   };
 
+  R.team = function () {
+    var people = (S.team && S.team.people) || [];
+    return '<p class="max-w-3xl text-lg leading-relaxed text-slate-600">' + esc(S.team.intro) + "</p>" +
+      '<div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">' + people.map(function (p) {
+        var initials = p.name.split(" ").filter(function (w) { return /^[A-Za-z]/.test(w); })
+                        .map(function (w) { return w[0]; }).slice(0, 2).join("").toUpperCase();
+        var open = /^open position$/i.test(p.name);
+        var avatar = p.photo
+          ? '<img src="assets/img/' + esc(p.photo) + '" alt="' + esc(p.name) + '" loading="lazy" ' +
+            'class="h-20 w-20 shrink-0 rounded-xl object-cover ring-1 ring-mint-200" ' +
+            'onerror="this.replaceWith(Object.assign(document.createElement(\'div\'),{className:\'grid h-20 w-20 shrink-0 place-items-center rounded-xl bg-mint-100 font-serif text-xl font-bold text-forest-700\',textContent:\'' + initials + '\'}))">'
+          : '<div class="grid h-20 w-20 shrink-0 place-items-center rounded-xl ' +
+            (open ? "border border-dashed border-mint-200 text-slate-400" : "bg-mint-100 text-forest-700") +
+            ' font-serif text-xl font-bold">' + (open ? "&#43;" : initials) + "</div>";
+        var org = p.org ? '<p class="mt-0.5 text-sm text-slate-500">' + esc(p.org) + "</p>" : "";
+        var link = p.link ? '<a href="' + esc(p.link) + '" target="_blank" rel="noopener" class="mt-3 inline-block text-sm font-semibold text-ochre-600 hover:text-ochre-700">Profile &#8594;</a>' : "";
+        return '<article class="flex flex-col rounded-2xl bg-white p-6 shadow-sm ring-1 ' + (open ? "ring-mint-200/60" : "ring-mint-200") + '">' +
+          '<div class="flex items-start gap-4">' + avatar +
+          '<div><h3 class="font-semibold leading-snug ' + (open ? "text-slate-500" : "text-forest-800") + '">' + esc(p.name) + "</h3>" +
+          '<p class="mt-0.5 text-sm font-medium text-ochre-600">' + esc(p.role) + "</p>" + org + "</div></div>" +
+          '<p class="mt-4 flex-1 text-sm leading-relaxed text-slate-600">' + esc(p.focus) + "</p>" + link + "</article>";
+      }).join("") + "</div>";
+  };
+
+  R.gallery = function () {
+    var g = S.gallery || { photos: [] };
+    var photos = g.photos || [];
+    if (!photos.length) return "";
+    var intro = g.intro ? '<p class="mt-3 max-w-3xl text-lg text-slate-600">' + esc(g.intro) + "</p>" : "";
+    return '<h2 class="font-serif text-3xl font-bold text-forest-800 sm:text-4xl">' + esc(g.heading) + "</h2>" + intro +
+      '<div class="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">' + photos.map(function (p) {
+        return '<figure class="overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-mint-200">' +
+          '<a href="assets/img/' + esc(p.file) + '" target="_blank" rel="noopener">' +
+          '<img src="assets/img/' + esc(p.file) + '" alt="' + esc(p.caption || "B-CIRC laboratory") + '" loading="lazy" ' +
+          'class="aspect-[4/3] w-full object-cover transition duration-300 hover:scale-[1.03]"></a>' +
+          (p.caption ? '<figcaption class="px-5 py-4 text-sm text-slate-600">' + esc(p.caption) + "</figcaption>" : "") +
+          "</figure>";
+      }).join("") + "</div>";
+  };
+
   R.news = function () {
     return '<div class="space-y-5">' + S.news.map(function (p) {
       var d = new Date(p.date + "T00:00:00");

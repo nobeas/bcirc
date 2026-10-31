@@ -47,6 +47,7 @@ window.SITE = {
     { label: "Devices",  href: "devices.html"  },
     { label: "Services", href: "services.html" },
     { label: "Training", href: "training.html" },
+    { label: "Team",     href: "team.html"     },
     { label: "Partners", href: "partners.html" },
     { label: "News",     href: "news.html"     }
   ],
@@ -205,7 +206,74 @@ window.SITE = {
     commercial: "Commercial path: licensing the coal to FJH graphene to Si@Carbon process to regional manufacturers, with the supply chain model replicable in Zambia, Zimbabwe and Mozambique. IP is filed in Botswana and held there."
   },
 
-  /* ---------- 11. news ----------
+  /* ---------- 11. team ----------
+     photo: the file name of a picture you uploaded to assets/img/
+            leave it as "" and the card shows the person's initials instead.
+     link:  an ORCID, Google Scholar, LinkedIn or university page. "" hides it. */
+  team: {
+    intro: "B-CIRC is led from Botswana and spans electrochemical materials science, sustainable synthesis, CVD engineering, computation, industrial ecology and energy policy.",
+    people: [
+      { name: "Dr Isaac N. Beas",
+        role: "Principal investigator",
+        org:  "",
+        photo: "",
+        focus: "Flash Joule heating of Botswana coal to graphene, and Si@carbon device development. Co-author of the published TiO₂/NHCS photoelectrochemical proof of concept, which appeared under the name I. Nongwe.",
+        link: "" },
+
+      { name: "Chawangwa Damba",
+        role: "Co-investigator",
+        org:  "BITRI",
+        photo: "",
+        focus: "EDIT: one line on what this person leads on the project.",
+        link: "" },
+
+      { name: "Ledwaba Kabelo",
+        role: "Co-investigator",
+        org:  "University of South Africa",
+        photo: "",
+        focus: "EDIT: one line on what this person leads on the project.",
+        link: "" },
+
+      /* The roles below are the ones still open in the ISC3 submission.
+         Fill in a name when you have one, or delete the whole block.      */
+      { name: "Open position",
+        role: "Carbon synthesis and CVD lead",
+        org:  "",
+        photo: "",
+        focus: "CVD reactor design, nanotube and amorphous carbon deposition, Raman characterisation.",
+        link: "" },
+
+      { name: "Open position",
+        role: "Green chemistry and biodegradation lead",
+        org:  "",
+        photo: "",
+        focus: "OECD protocols, degradation pathways by GC-MS and HPLC, REACH compliance.",
+        link: "" },
+
+      { name: "Open position",
+        role: "Computation and machine learning lead",
+        org:  "",
+        photo: "",
+        focus: "Classical GNN and LSTM pipelines for ion migration barriers and capacity fade, with the quantum workstream alongside.",
+        link: "" }
+    ]
+  },
+
+  /* ---------- 12. lab photographs ----------
+     Upload the picture files to assets/img/ first, then list them here.
+     Only the file name goes in "file", not the whole path.
+     An empty list hides the whole gallery section.                        */
+  gallery: {
+    heading: "Inside the lab",
+    intro: "",
+    photos: [
+      /* Example. Delete this line and add your own:
+      { file: "lab-fjh-reactor.jpg", caption: "Flash Joule heating rig, Botswana coal in the discharge cell" },
+      */
+    ]
+  },
+
+  /* ---------- 13. news ----------
      Newest first. Copy a block to add a post. Keep the date as YYYY-MM-DD.  */
   news: [
     { date:"2026-04-15", tag:"Submission",
@@ -216,7 +284,7 @@ window.SITE = {
       body:"The lead architecture cleared its 700 mAh g⁻¹ target with coulombic efficiency at 98.4% after the fifth cycle. In-situ XRD put volume change at roughly 22%, comfortably inside the 30% design ceiling." }
   ],
 
-  /* ---------- 12. newsletter and footer ---------- */
+  /* ---------- 14. newsletter and footer ---------- */
   newsletter: {
     heading: "Progress notes from the lab",
     body: "Monthly. New device results, preprints as they go up, course dates, and write-ups of the runs that did not work."
