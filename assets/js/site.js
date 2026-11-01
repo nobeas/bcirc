@@ -289,6 +289,91 @@
     '<p class="mt-8 text-sm text-mint-200/70">' + esc(S.partners.commercial) + "</p>";
   };
 
+  /* Home page product carousel. Driven by the same materials list as the
+     services page: any material with an image joins the rotation.          */
+  function mediaTag(file, alt) {
+    var src = "assets/img/" + file;
+    if (/\.(mp4|webm)$/i.test(file)) {
+      return '<video src="' + esc(src) + '" autoplay muted loop playsinline preload="metadata" ' +
+             'aria-label="' + esc(alt) + '" class="h-full w-full object-cover"></video>';
+    }
+    return '<img src="' + esc(src) + '" alt="' + esc(alt) + '" loading="lazy" class="h-full w-full object-cover">';
+  }
+
+  R.products = function () {
+    var items = (S.materials || []).filter(function (m) { return m.image; });
+    if (!items.length) return "";
+    var slides = items.map(function (m, i) {
+      return '<div class="pcar-slide absolute inset-0 transition-opacity duration-700 ' +
+             (i ? "opacity-0" : "opacity-100") + '">' + mediaTag(m.image, m.name) + "</div>";
+    }).join("");
+    var dots = items.map(function (m, i) {
+      return '<button class="pcar-dot h-2 rounded-full transition-all ' +
+             (i ? "w-2 bg-mint-200" : "w-6 bg-forest-800") + '" data-i="' + i + '" ' +
+             'aria-label="Show ' + esc(m.name) + '"></button>';
+    }).join("");
+    return '<div class="grid items-center gap-10 lg:grid-cols-12">' +
+      '<div class="lg:col-span-6"><div class="pcar-stage relative aspect-[4/3] overflow-hidden rounded-2xl bg-mint-100 ring-1 ring-mint-200">' + slides + "</div>" +
+      '<div class="mt-5 flex items-center gap-3"><button class="pcar-prev grid h-9 w-9 place-items-center rounded-lg ring-1 ring-mint-200 text-forest-800 transition hover:bg-mint-100" aria-label="Previous">' +
+      '<svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 5l-7 7 7 7"/></svg></button>' +
+      '<div class="pcar-dots flex flex-1 items-center gap-2">' + dots + "</div>" +
+      '<button class="pcar-next grid h-9 w-9 place-items-center rounded-lg ring-1 ring-mint-200 text-forest-800 transition hover:bg-mint-100" aria-label="Next">' +
+      '<svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 5l7 7-7 7"/></svg></button></div></div>' +
+      '<div class="lg:col-span-6">' +
+      '<p class="text-xs font-semibold uppercase tracking-[0.18em] text-ochre-600">Materials</p>' +
+      '<h2 class="pcar-name mt-3 font-serif text-3xl font-bold text-forest-800 sm:text-4xl"></h2>' +
+      '<p class="pcar-body mt-4 text-lg leading-relaxed text-slate-600"></p>' +
+      '<dl class="pcar-specs mt-6 grid max-w-sm grid-cols-2 gap-y-2 border-t border-mint-200 pt-4 font-mono text-sm"></dl>' +
+      '<div class="mt-7 flex flex-wrap gap-3">' +
+      '<button data-open="booking" class="pcar-quote rounded-xl bg-forest-800 px-5 py-3 text-sm font-semibold text-white transition hover:bg-forest-700">Request a quote</button>' +
+      '<a href="services.html" class="rounded-xl border border-forest-800/20 px-5 py-3 text-sm font-semibold text-forest-800 transition hover:bg-mint-50">All materials and services</a>' +
+      "</div></div></div>";
+  };
+
+  function startCarousel() {
+    var root = document.querySelector('[data-render="products"]');
+    if (!root) return;
+    var slides = root.querySelectorAll(".pcar-slide");
+    if (!slides.length) return;
+    var items = (S.materials || []).filter(function (m) { return m.image; });
+    var dots = root.querySelectorAll(".pcar-dot");
+    var name = root.querySelector(".pcar-name"), bodyEl = root.querySelector(".pcar-body"),
+        specs = root.querySelector(".pcar-specs"), quote = root.querySelector(".pcar-quote");
+    var at = 0, timer = null;
+    var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    function show(n) {
+      at = (n + items.length) % items.length;
+      slides.forEach(function (s, i) {
+        s.classList.toggle("opacity-100", i === at);
+        s.classList.toggle("opacity-0", i !== at);
+      });
+      dots.forEach(function (d, i) {
+        d.classList.toggle("w-6", i === at); d.classList.toggle("bg-forest-800", i === at);
+        d.classList.toggle("w-2", i !== at); d.classList.toggle("bg-mint-200", i !== at);
+      });
+      var m = items[at];
+      name.textContent = m.name;
+      bodyEl.textContent = m.body;
+      specs.innerHTML = (m.specs || []).map(function (sp) {
+        return '<dt class="text-slate-500">' + esc(sp[0]) + '</dt><dd class="text-right text-slate-700">' + esc(sp[1]) + "</dd>";
+      }).join("");
+      quote.dataset.subject = "Material inquiry: " + m.name;
+    }
+    function play() { if (!reduce && !timer) timer = setInterval(function () { show(at + 1); }, 6000); }
+    function stop() { clearInterval(timer); timer = null; }
+
+    dots.forEach(function (d) { d.onclick = function () { stop(); show(+d.dataset.i); play(); }; });
+    var prev = root.querySelector(".pcar-prev"), next = root.querySelector(".pcar-next");
+    if (prev) prev.onclick = function () { stop(); show(at - 1); play(); };
+    if (next) next.onclick = function () { stop(); show(at + 1); play(); };
+    root.addEventListener("mouseenter", stop);
+    root.addEventListener("mouseleave", play);
+    root.addEventListener("focusin", stop);
+
+    show(0); play();
+  }
+
   R.areas = function () {
     var a = S.areas || { items: [] };
     return '<h2 class="font-serif text-3xl font-bold text-forest-800 sm:text-4xl">' + esc(a.heading) + "</h2>" +
@@ -447,9 +532,16 @@
 
     document.querySelectorAll("[data-render]").forEach(function (node) {
       var k = node.dataset.render;
-      if (R[k]) node.innerHTML = R[k]();
+      if (!R[k]) return;
+      var html = R[k]();
+      node.innerHTML = html;
+      if (!html) {                       // nothing to show yet: hide the whole band
+        var sec = node.closest ? node.closest("section") : null;
+        if (sec) sec.style.display = "none";
+      }
     });
     paintCarbons();
+    startCarousel();
     if (S.devices.length) paintDevice(S.devices[0].id);
 
     document.addEventListener("click", function (e) {

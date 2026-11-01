@@ -151,15 +151,22 @@ window.SITE = {
     body: "TiO₂ makes up 99.5 wt% of the photoanode paste and is bought commercially for Year 1. The nitrogen-doped hollow carbon spheres, which are the actual innovation in that device, are entirely fly ash derived. Year 2 investigates titanium precursors from Selibe-Phikwe nickel and copper tailings. We would rather say this on the website than have a technical reviewer find it."
   },
 
-  /* ---------- 8. services page ---------- */
+  /* ---------- 8. services page ----------
+     image: a picture of the material, uploaded to assets/img/.
+            Leave "" and that product is left out of the home page carousel.
+            Works with .jpg .png .webp, with animated .gif and animated .webp,
+            and with silent .mp4 or .webm clips, which autoplay on a loop.    */
   materials: [
     { name:"FJH turbostratic graphene", sku:"FJH-G",
+      image: "",
       body:"Flash Joule heated from Botswana coal in a millisecond discharge. No solvents, no acids, no oxidants anywhere in the route.",
       specs:[["BET","~1,380 m² g⁻¹"],["I_D/I_G","0.15–0.45"]] },
     { name:"Fly ash silica and porous Si", sku:"SI-FA",
+      image: "",
       body:"Mesoporous SiO₂ by alkali extraction from Morupule B ash, and porous silicon nanoparticles by magnesiothermic reduction at 650 °C.",
       specs:[["Forms","SiO₂, Si, Si@C"],["Feed","~80,000 t/yr"]] },
     { name:"Hard carbon and hollow spheres", sku:"HC / HCS",
+      image: "",
       body:"Sorghum straw hard carbon for sodium-ion anodes, and CVD hollow carbon spheres templated on fly ash silica, including N and B doped grades.",
       specs:[["Interlayer","0.38–0.40 nm"],["Doping","N, B available"]] }
   ],
