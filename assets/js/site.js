@@ -103,6 +103,40 @@
         '<p id="dossierMsg" class="hidden rounded-lg bg-mint-100 px-4 py-3 text-sm text-forest-800"></p></form></div></div></div>';
   }
 
+
+  /* Profile services. The first pattern that matches a URL wins; the last
+     entry is the fallback, so keep it last. Icons are drawn here, not loaded. */
+  var SERVICES = [
+    { name: "LinkedIn", test: /linkedin\./i, bg: "#0a66c2", fg: "#ffffff",
+      icon: '<svg viewBox="0 0 24 24" class="h-5 w-5" fill="currentColor" aria-hidden="true">' +
+            '<circle cx="5.2" cy="5" r="2.2"/><rect x="3.1" y="9" width="4.2" height="11.8" rx="0.4"/>' +
+            '<path d="M10.2 20.8V9h4v1.7c.8-1.3 2.2-2 3.9-2 3.1 0 4.8 2 4.8 5.8v6.3h-4.2v-5.8c0-1.6-.6-2.7-2-2.7s-2.3 1.1-2.3 2.7v5.8h-4.2z"/></svg>' },
+
+    { name: "ORCID", test: /orcid\./i, bg: "#a6ce39", fg: "#ffffff",
+      icon: '<svg viewBox="0 0 24 24" class="h-5 w-5" aria-hidden="true">' +
+            '<circle cx="12" cy="12" r="11" fill="currentColor"/>' +
+            '<text x="12" y="16.5" text-anchor="middle" font-family="Georgia,serif" font-size="11" font-weight="700" fill="#a6ce39">iD</text></svg>' },
+
+    { name: "Google Scholar", test: /scholar\.google/i, bg: "#ffffff", fg: "#4285f4",
+      icon: '<svg viewBox="0 0 24 24" class="h-5 w-5" fill="currentColor" aria-hidden="true">' +
+            '<path d="M12 3 1.5 8.7 12 14.4l8.3-4.5v6.4h1.6V8.7z"/>' +
+            '<path d="M5.4 12.7v4.1C5.4 19 8.4 21 12 21s6.6-2 6.6-4.2v-4.1L12 16.3z"/></svg>' },
+
+    { name: "ResearchGate", test: /researchgate\./i, bg: "#00ccbb", fg: "#ffffff",
+      icon: '<svg viewBox="0 0 24 24" class="h-5 w-5" aria-hidden="true">' +
+            '<circle cx="12" cy="12" r="11" fill="currentColor"/>' +
+            '<text x="12" y="16.5" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="10" font-weight="700" fill="#00ccbb">RG</text></svg>' },
+
+    { name: "Scopus", test: /scopus\./i, bg: "#e9711c", fg: "#ffffff",
+      icon: '<svg viewBox="0 0 24 24" class="h-5 w-5" aria-hidden="true">' +
+            '<circle cx="12" cy="12" r="11" fill="currentColor"/>' +
+            '<text x="12" y="16.5" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="12" font-weight="700" fill="#e9711c">S</text></svg>' },
+
+    { name: "the web", test: /./, bg: "#e8f5e9", fg: "#1c4332",
+      icon: '<svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">' +
+            '<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a15 15 0 0 1 0 18a15 15 0 0 1 0-18"/></svg>' }
+  ];
+
   /* ---------------- block renderers ---------------- */
   var R = {};
 
@@ -286,15 +320,17 @@
             (open ? "border border-dashed border-mint-200 text-slate-400" : "bg-mint-100 text-forest-700") +
             ' font-serif text-xl font-bold">' + (open ? "&#43;" : initials) + "</div>";
         var org = p.org ? '<p class="mt-0.5 text-sm text-slate-500">' + esc(p.org) + "</p>" : "";
-        var label = "Profile";
-        if (/linkedin\./i.test(p.link)) label = "LinkedIn";
-        else if (/orcid\./i.test(p.link)) label = "ORCID";
-        else if (/scholar\.google/i.test(p.link)) label = "Google Scholar";
-        else if (/researchgate\./i.test(p.link)) label = "ResearchGate";
-        var link = p.link ? '<a href="' + esc(p.link) + '" target="_blank" rel="noopener" ' +
-          'class="mt-4 inline-flex w-fit items-center gap-1.5 rounded-lg border border-ochre-600/40 bg-ochre-100 px-3 py-1.5 text-xs font-semibold text-ochre-700 transition hover:bg-ochre-600 hover:text-white">' +
-          label + '<svg viewBox="0 0 24 24" class="h-3 w-3" fill="none" stroke="currentColor" stroke-width="2">' +
-          '<path d="M7 17 17 7M9 7h8v8"/></svg></a>' : "";
+        var urls = [].concat(p.links || [], p.link ? [p.link] : [])
+                     .filter(function (u, i, a) { return u && a.indexOf(u) === i; });
+        var link = urls.length
+          ? '<div class="mt-4 flex flex-wrap gap-2">' + urls.map(function (u) {
+              var svc = SERVICES.filter(function (x) { return x.test.test(u); })[0] || SERVICES[SERVICES.length - 1];
+              return '<a href="' + esc(u) + '" target="_blank" rel="noopener me" ' +
+                'aria-label="' + esc(p.name) + ' on ' + svc.name + '" title="' + esc(p.name) + ' on ' + svc.name + '" ' +
+                'class="grid h-9 w-9 place-items-center rounded-lg ring-1 ring-mint-200 transition hover:scale-110" ' +
+                'style="background:' + svc.bg + ';color:' + svc.fg + '">' + svc.icon + "</a>";
+            }).join("") + "</div>"
+          : "";
         return '<article class="flex flex-col rounded-2xl bg-white p-6 shadow-sm ring-1 ' + (open ? "ring-mint-200/60" : "ring-mint-200") + '">' +
           '<div class="flex items-start gap-4">' + avatar +
           '<div><h3 class="font-semibold leading-snug ' + (open ? "text-slate-500" : "text-forest-800") + '">' + esc(p.name) + "</h3>" +
