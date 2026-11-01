@@ -248,7 +248,7 @@ window.SITE = {
         role: " Materials and Processing, Intellectual Property expert",
         org:  "BITRI",
         photo: "chawangwa-damba.jpeg",
-        focus: "EDIT: one line on what this person leads on the project.",
+        focus: "Materials and IP specialist, owrking on converting waste and low-value resources into commercially viable materials. Hold and LL.M in intellectual Property. Materials and Processing. IP management and technology transfer.",
         link: "" },
 
       { name: "Ledwaba Kabelo",
