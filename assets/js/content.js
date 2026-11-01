@@ -247,7 +247,7 @@ window.SITE = {
       { name: "Chawangwa Damba",
         role: " Materials and Processing, Intellectual Property expert",
         org:  "BITRI",
-        photo: "chawangwa-damba.jpg",
+        photo: "chawangwa-damba.jpeg",
         focus: "EDIT: one line on what this person leads on the project.",
         link: "" },
 
