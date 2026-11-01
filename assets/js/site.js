@@ -286,7 +286,15 @@
             (open ? "border border-dashed border-mint-200 text-slate-400" : "bg-mint-100 text-forest-700") +
             ' font-serif text-xl font-bold">' + (open ? "&#43;" : initials) + "</div>";
         var org = p.org ? '<p class="mt-0.5 text-sm text-slate-500">' + esc(p.org) + "</p>" : "";
-        var link = p.link ? '<a href="' + esc(p.link) + '" target="_blank" rel="noopener" class="mt-3 inline-block text-sm font-semibold text-ochre-600 hover:text-ochre-700">Profile &#8594;</a>' : "";
+        var label = "Profile";
+        if (/linkedin\./i.test(p.link)) label = "LinkedIn";
+        else if (/orcid\./i.test(p.link)) label = "ORCID";
+        else if (/scholar\.google/i.test(p.link)) label = "Google Scholar";
+        else if (/researchgate\./i.test(p.link)) label = "ResearchGate";
+        var link = p.link ? '<a href="' + esc(p.link) + '" target="_blank" rel="noopener" ' +
+          'class="mt-4 inline-flex w-fit items-center gap-1.5 rounded-lg border border-ochre-600/40 bg-ochre-100 px-3 py-1.5 text-xs font-semibold text-ochre-700 transition hover:bg-ochre-600 hover:text-white">' +
+          label + '<svg viewBox="0 0 24 24" class="h-3 w-3" fill="none" stroke="currentColor" stroke-width="2">' +
+          '<path d="M7 17 17 7M9 7h8v8"/></svg></a>' : "";
         return '<article class="flex flex-col rounded-2xl bg-white p-6 shadow-sm ring-1 ' + (open ? "ring-mint-200/60" : "ring-mint-200") + '">' +
           '<div class="flex items-start gap-4">' + avatar +
           '<div><h3 class="font-semibold leading-snug ' + (open ? "text-slate-500" : "text-forest-800") + '">' + esc(p.name) + "</h3>" +
