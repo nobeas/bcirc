@@ -26,7 +26,7 @@ window.SITE = {
   contact: {
     pi: "Dr Isaac N. Beas",
     piNote: "Principal investigator. Published as I. Nongwe.",
-    email: "EDIT-ME@example.org",
+    email: "ibeas@bitri.co.bw",
     city: "Gaborone, Botswana",
     institution: ""            // leave "" to hide. The supplied logo had BITRI removed.
   },
@@ -239,20 +239,20 @@ window.SITE = {
     people: [
       { name: "Dr Isaac N. Beas",
         role: "Principal investigator",
-        org:  "",
+        org:  "B-CIRC/BITRI",
         photo: "isaac-beas.jpg",
         focus: "Flash Joule heating of Botswana coal to graphene, and Si@carbon device development. Co-author of the published TiO₂/NHCS photoelectrochemical proof of concept, which appeared under the name I. Nongwe.",
         link: "" },
 
       { name: "Chawangwa Damba",
-        role: "Co-investigator",
+        role: " Materials and Processing, Intellectual Property expert",
         org:  "BITRI",
         photo: "chawangwa-damba.jpg",
         focus: "EDIT: one line on what this person leads on the project.",
         link: "" },
 
       { name: "Ledwaba Kabelo",
-        role: "Co-investigator",
+        role: "Electrochemistry & Battery",
         org:  "University of South Africa",
         photo: "ledwaba-kabelo.jpg",
         focus: "EDIT: one line on what this person leads on the project.",
