@@ -249,7 +249,7 @@ window.SITE = {
         org:  "BITRI",
         photo: "chawangwa-damba.jpeg",
         focus: "Materials and IP specialist, owrking on converting waste and low-value resources into commercially viable materials. Hold and LL.M in intellectual Property. Materials and Processing. IP management and technology transfer.",
-        link: "" },
+        link: "https://www.linkedin.com/in/chawangwa-d-8a506b49/" },
 
       { name: "Ledwaba Kabelo",
         role: "Electrochemistry & Battery",
