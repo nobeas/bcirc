@@ -158,15 +158,15 @@ window.SITE = {
             and with silent .mp4 or .webm clips, which autoplay on a loop.    */
   materials: [
     { name:"FJH turbostratic graphene", sku:"FJH-G",
-      image: "",
+      image: "Fly graphene.jpeg",
       body:"Flash Joule heated from Botswana coal in a millisecond discharge. No solvents, no acids, no oxidants anywhere in the route.",
       specs:[["BET","~1,380 m² g⁻¹"],["I_D/I_G","0.15–0.45"]] },
     { name:"Fly ash silica and porous Si", sku:"SI-FA",
-      image: "",
+      image: "silica.jpeg",
       body:"Mesoporous SiO₂ by alkali extraction from Morupule B ash, and porous silicon nanoparticles by magnesiothermic reduction at 650 °C.",
       specs:[["Forms","SiO₂, Si, Si@C"],["Feed","~80,000 t/yr"]] },
     { name:"Hard carbon and hollow spheres", sku:"HC / HCS",
-      image: "",
+      image: "Carbon sphere.jpeg",
       body:"Sorghum straw hard carbon for sodium-ion anodes, and CVD hollow carbon spheres templated on fly ash silica, including N and B doped grades.",
       specs:[["Interlayer","0.38–0.40 nm"],["Doping","N, B available"]] }
   ],
