@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Publications | B-CIRC</title>
+<meta name="description" content="Peer-reviewed publications by the B-CIRC team, in catalysis, carbon materials, coal and fly ash valorisation.">
+<meta property="og:title" content="Platform | B-CIRC">
+<meta property="og:description" content="Peer-reviewed publications by the B-CIRC team, in catalysis, carbon materials, coal and fly ash valorisation.">
+<meta property="og:type" content="website">
+<link rel="icon" href="assets/img/logo.svg">
+<link rel="stylesheet" href="assets/css/site.css">
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="assets/js/theme.js"></script>
+</head>
+<body class="font-sans text-slate-700 antialiased">
+<div id="site-header"></div>
+<section class="hexbg border-b border-mint-200 pt-28 pb-14 lg:pt-36 lg:pb-16">
+  <div class="mx-auto max-w-5xl px-5 lg:px-8">
+    <p class="text-xs font-semibold uppercase tracking-[0.18em] text-ochre-600">Research output</p>
+    <h1 class="mt-4 font-serif text-4xl font-bold leading-tight text-forest-800 sm:text-5xl" id="pubHead"></h1>
+    <p class="mt-5 max-w-3xl text-lg leading-relaxed text-slate-600" id="pubIntro"></p>
+    <div class="mt-10" data-render="pubMetrics"></div>
+  </div>
+</section>
+
+<section class="py-16 lg:py-20"><div class="mx-auto max-w-5xl px-5 lg:px-8" data-render="publications"></div></section>
+
+<section class="hexbg border-t border-mint-200 py-16"><div class="mx-auto max-w-3xl px-5 text-center lg:px-8">
+  <h2 class="font-serif text-2xl font-bold text-forest-800">Working on something related?</h2>
+  <p class="mt-3 text-slate-600">We collaborate on catalysis, carbon materials and coal or fly ash valorisation, and take contract research under NDA.</p>
+  <button data-open="booking" data-subject="Process development consult" class="mt-6 rounded-xl bg-forest-800 px-6 py-3.5 text-sm font-semibold text-white transition hover:bg-forest-700">Start a conversation</button>
+</div></section>
+
+<div id="site-footer"></div>
+<script src="assets/js/content.js"></script>
+<script src="assets/js/site.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  document.getElementById("pubHead").textContent = window.SITE.publications.heading;
+  document.getElementById("pubIntro").textContent = window.SITE.publications.intro;
+});
+</script>
+</body>
+</html>
