@@ -390,6 +390,54 @@
       }).join("") + "</div>";
   };
 
+  R.pubMetrics = function () {
+    var P = S.publications || {};
+    return '<div class="grid gap-px overflow-hidden rounded-2xl border border-mint-200 bg-mint-200 sm:grid-cols-3">' +
+      (P.metrics || []).map(function (m) {
+        return '<div class="bg-white p-6 text-center"><p class="font-serif text-3xl font-bold text-forest-800">' + esc(m.value) + "</p>" +
+               '<p class="mt-1.5 text-sm text-slate-600">' + esc(m.label) + "</p></div>";
+      }).join("") + "</div>" +
+      (P.metricsNote ? '<p class="mt-3 text-center text-xs text-slate-500">' + esc(P.metricsNote) + "</p>" : "");
+  };
+
+  R.publications = function () {
+    var P = S.publications || {}, items = (P.items || []).slice();
+    if (!items.length) return "";
+    var marks = P.highlight || [];
+    items.sort(function (a, b) { return b.year - a.year; });
+
+    function markAuthors(str) {
+      return String(str).split(", ").map(function (nm) {
+        var hit = marks.some(function (m) { return nm.indexOf(m) > -1; });
+        return hit ? '<strong class="font-semibold text-forest-800">' + esc(nm) + "</strong>" : esc(nm);
+      }).join(", ");
+    }
+
+    var years = [], byYear = {};
+    items.forEach(function (it) {
+      if (!byYear[it.year]) { byYear[it.year] = []; years.push(it.year); }
+      byYear[it.year].push(it);
+    });
+
+    return years.map(function (y) {
+      return '<section class="mt-10 first:mt-0">' +
+        '<div class="flex items-center gap-4"><h2 class="font-serif text-2xl font-bold text-forest-800">' + y + "</h2>" +
+        '<span class="h-px flex-1 bg-mint-200"></span>' +
+        '<span class="font-mono text-xs text-slate-500">' + byYear[y].length + (byYear[y].length === 1 ? " paper" : " papers") + "</span></div>" +
+        '<ol class="mt-4 space-y-4">' + byYear[y].map(function (it) {
+          var link = it.doi
+            ? '<a href="https://doi.org/' + esc(it.doi) + '" target="_blank" rel="noopener" ' +
+              'class="mt-2 inline-flex items-center gap-1.5 rounded-lg border border-ochre-600/40 bg-ochre-100 px-2.5 py-1 font-mono text-[11px] font-semibold text-ochre-700 transition hover:bg-ochre-600 hover:text-white">' +
+              esc(it.doi) + '<svg viewBox="0 0 24 24" class="h-3 w-3" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a>'
+            : "";
+          return '<li class="rounded-2xl bg-white p-5 shadow-sm ring-1 ring-mint-200 transition hover:ring-forest-600">' +
+            '<p class="font-semibold leading-snug text-forest-800">' + esc(it.title) + "</p>" +
+            '<p class="mt-1.5 text-sm text-slate-600">' + markAuthors(it.authors) + "</p>" +
+            '<p class="mt-1 text-sm italic text-slate-500">' + esc(it.where) + "</p>" + link + "</li>";
+        }).join("") + "</ol></section>";
+    }).join("");
+  };
+
   R.team = function () {
     var people = (S.team && S.team.people) || [];
     return '<p class="max-w-3xl text-lg leading-relaxed text-slate-600">' + esc(S.team.intro) + "</p>" +

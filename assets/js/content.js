@@ -48,6 +48,7 @@ window.SITE = {
     { label: "Services", href: "services.html" },
     { label: "Training", href: "training.html" },
     { label: "Team",     href: "team.html"     },
+    { label: "Papers",   href: "publications.html" },
     { label: "Partners", href: "partners.html" },
     { label: "News",     href: "news.html"     }
   ],
@@ -301,6 +302,186 @@ window.SITE = {
       /* Example. Delete this line and add your own:
       { file: "lab-fjh-reactor.jpg", caption: "Flash Joule heating rig, Botswana coal in the discharge cell" },
       */
+    ]
+  },
+
+  /* ---------- 14. publications ----------
+     Verified against Crossref. Newest first; the page groups them by year.
+     To add one, copy a block and fill it in. The doi is the bare identifier,
+     not the full https address. Leave doi: "" and no link is shown.        */
+  publications: {
+    heading: "Publications",
+    intro: "Peer-reviewed work by the B-CIRC team. Papers before 2021 appear under the name I. Nongwe, which is the same author as I. N. Beas.",
+    /* EDIT: update these three when your metrics change, and the date with them. */
+    metrics: [
+      { value: "26",    label: "peer-reviewed journal articles" },
+      { value: "16",    label: "h-index" },
+      { value: "2,305", label: "citations" }
+    ],
+    metricsNote: "Metrics as recorded in the PI's curriculum vitae.",
+    highlight: ["Beas", "Nongwe"],
+    items: [
+    { year: 2025,
+      title: "Comparative analysis of zeolites synthesized from acid refluxed and acid roasted coal fly ash: Application of fly ash-derived zeolites for removal of dye from water",
+      authors: "E.M.V. Gaolefufa, T. Manyepedza, I.N. Beas, B.F. Modukanele, M.T. Kabomo",
+      where: "MRS Advances 10, 2435-2446",
+      doi: "10.1557/s43580-025-01322-8" },
+
+    { year: 2025,
+      title: "ZSM‐5 Zeolite Synthesis from Coal Fly Ash Synthesised Silica: Sole Silica & Alumina Source",
+      authors: "T. Manyepedza, E.V. Gaolefufa, I.N. Beas, M. Maubane‐Nkadimeng, M.T. Kabomo",
+      where: "ChemistryOpen 14",
+      doi: "10.1002/open.202400314" },
+
+    { year: 2024,
+      title: "Characterisation of Bambara groundnut (Vigna subterranea (L.) Verdc.) shell waste as a potential biomass for different bio-based products",
+      authors: "L.K. Ncube, A.U. Ude, E.N. Ogunmuyiwa, I.N. Beas",
+      where: "Environmental Monitoring and Assessment 196",
+      doi: "10.1007/s10661-024-12937-z" },
+
+    { year: 2024,
+      title: "Cytotoxic Cu(II) Complexes with a Novel Quinoline Derivative Ligand: Synthesis, Molecular Docking, and Biological Activity Analysis",
+      authors: "G. Shumi, T.B. Demissie, M. Koobotse, G. Kenasa, I.N. Beas, M. Zachariah, T. Desalegn",
+      where: "ACS Omega 9, 25014-25026",
+      doi: "10.1021/acsomega.4c02129" },
+
+    { year: 2024,
+      title: "Debunking the impact of crystallite/particle size in cobalt-based Fischer-Tropsch synthesis",
+      authors: "J. Gorimbo, R. Chikati, P. Khangale, I.N. Beas, L.L. Mguni, D. Nkazi",
+      where: "Chemical Engineering Communications 211, 1262-1287",
+      doi: "10.1080/00986445.2024.2341263" },
+
+    { year: 2024,
+      title: "Effect of Support Particle Size in Fischer–Tropsch Synthesis: the Use of Natural Clinoptilolite as Support",
+      authors: "J. Gorimbo, R. Chikati, P. Khangale, T.N. Phaahlamohlaka, L.L. Mguni, I.N. Beas, D. Nkazi",
+      where: "Industrial & Engineering Chemistry Research 63, 3018-3029",
+      doi: "10.1021/acs.iecr.3c03999" },
+
+    { year: 2024,
+      title: "Mechano-synthesis of a AgSrFeO 3 catalyst for epoxidation of ethylene in a chemical looping set-up",
+      authors: "C. Damba, I.N. Beas, M.M. Mapolelo, J. Darkwa, E.J. Marek",
+      where: "Materials Advances 5, 6007-6015",
+      doi: "10.1039/d4ma00485j" },
+
+    { year: 2024,
+      title: "Synthesis, Molecular Docking, and antibacterial evaluation of Quinoline-Derived Ni(II), Cu(II) and Zn(II) complexes",
+      authors: "D. Dinku, T.B. Demissie, I.N. Beas, T. Desalegn",
+      where: "Results in Chemistry 8, 101562",
+      doi: "10.1016/j.rechem.2024.101562" },
+
+    { year: 2024,
+      title: "Towards Attainment of Value-Added Chemicals with Industrial Applications Over Versatile Laco1-Xmnxo3±Δ Perovskites",
+      authors: "H.P. Mokwena, I.N. Beas, H. Li, N. Bingwa",
+      where: "",
+      doi: "10.2139/ssrn.4848248" },
+
+    { year: 2023,
+      title: "The Transfer Hydrogenation of Cinnamaldehyde Using Homogeneous Cobalt(II) and Nickel(II) (E)-1-(Pyridin-2-yl)-N-(3-(triethoxysilyl)propyl)methanimine and the Complexes Anchored on Fe3O4 Support as Pre-Catalysts: An Experimental and In Silico Approach",
+      authors: "F.P. Sejie, O.A. Oyetunji, J. Darkwa, I.N. Beas, B.C.E. Makhubela, N.Y. Dzade, N.H. de Leeuw",
+      where: "Molecules 28, 659",
+      doi: "10.3390/molecules28020659" },
+
+    { year: 2023,
+      title: "Thermogravimetric-mass spectrometry study of pyrolysis of Botswana-Morupule coal: kinetic parameters determination using iso-conversional and model fitting methods",
+      authors: "K.P. Kgatlane, S. Odisitse, C. Gate, J. Darkwa, I.N. Beas",
+      where: "Reaction Kinetics, Mechanisms and Catalysis 136, 2343-2358",
+      doi: "10.1007/s11144-023-02459-z" },
+
+    { year: 2022,
+      title: "Photocatalytic Degradation of Methylene Blue and Ortho-Toluidine Blue: Activity of Lanthanum Composites LaxMOy (M: Fe, Co, Ni)",
+      authors: "M.L. Mocwana, P.P. Mokoena, P.S. Mbule, I.N. Beas, G.L. Kabongo, S.N. Ogugua, T.E. Tshabalala",
+      where: "Catalysts 12, 1313",
+      doi: "10.3390/catal12111313" },
+
+    { year: 2021,
+      title: "TiO2@hollow carbon spheres: A photocatalyst for hydrogen generation under visible irradiation",
+      authors: "A. Boudjemaa, I. Nongwe, B. Mutuma, B. Matsoso, K. Bachari, N. Coville",
+      where: "Journal of Photochemistry and Photobiology A: Chemistry 417, 113355",
+      doi: "10.1016/j.jphotochem.2021.113355" },
+
+    { year: 2020,
+      title: "Cyclometalation of lanthanum( iii ) based MOF for catalytic hydrogenation of carbon dioxide to formate",
+      authors: "P. Tshuma, B.C.E. Makhubela, L. Öhrström, S.A. Bourne, N. Chatterjee, I.N. Beas, J. Darkwa, G. Mehlana",
+      where: "RSC Advances 10, 3593-3605",
+      doi: "10.1039/c9ra09938g" },
+
+    { year: 2020,
+      title: "Environmental Impact of Food Packaging Materials: A Review of Contemporary Development from Conventional Plastics to Polylactic Acid Based Materials",
+      authors: "L.K. Ncube, A.U. Ude, E.N. Ogunmuyiwa, R. Zulkifli, I.N. Beas",
+      where: "Materials 13, 4994",
+      doi: "10.3390/ma13214994" },
+
+    { year: 2020,
+      title: "Unravelling the interfacial interaction in mesoporous SiO2@nickel phyllosilicate/TiO2 core–shell nanostructures for photocatalytic activity",
+      authors: "B.K. Mutuma, X. Mathebula, I. Nongwe, B.P. Mtolo, B.J. Matsoso, R. Erasmus, Z. Tetana, N.J. Coville",
+      where: "Beilstein Journal of Nanotechnology 11, 1834-1846",
+      doi: "10.3762/bjnano.11.165" },
+
+    { year: 2019,
+      title: "Easy and convenient synthesis of CNT/TiO2 nanohybrid by in-surface oxidation of Ti3+ ions and application in the photocatalytic degradation of organic contaminants in water",
+      authors: "A.V. Abega, H.M. Ngomo, I. Nongwe, H.E. Mukaya, P.M.A. Kouoh Sone, X. Yangkou Mbianda",
+      where: "Synthetic Metals 251, 1-14",
+      doi: "10.1016/j.synthmet.2019.03.012" },
+
+    { year: 2018,
+      title: "Reduction of sulphur dioxide using carbon monoxide over gold supported catalysts",
+      authors: "T. Ngwenya, I. Nongwe, L.L. Jewell",
+      where: "Gold Bulletin 51, 153-162",
+      doi: "10.1007/s13404-018-0235-2" },
+
+    { year: 2017,
+      title: "Au and Ag nanoparticles encapsulated within silica nanospheres using dendrimers as dual templating agent and their catalytic activity",
+      authors: "M. Nemanashi-Maumela, I. Nongwe, R.C. Motene, B.L. Davids, R. Meijboom",
+      where: "Molecular Catalysis 438, 184-196",
+      doi: "10.1016/j.mcat.2017.06.003" },
+
+    { year: 2016,
+      title: "N-doped ordered mesoporous carbon supported PdCo nanoparticles for the catalytic oxidation of benzyl alcohol",
+      authors: "V. Ravat, I. Nongwe, N.J. Coville",
+      where: "Microporous and Mesoporous Materials 225, 224-231",
+      doi: "10.1016/j.micromeso.2015.11.019" },
+
+    { year: 2016,
+      title: "Pt supported nitrogen doped hollow carbon spheres for the catalysed reduction of cinnamaldehyde",
+      authors: "I. Nongwe, V. Ravat, R. Meijboom, N.J. Coville",
+      where: "Applied Catalysis A: General 517, 30-38",
+      doi: "10.1016/j.apcata.2016.02.025" },
+
+    { year: 2016,
+      title: "Selective gas phase isomerization of styrene oxide to phenylacetaldehyde in a steel tube reactor",
+      authors: "B. Terfassa, I. Nongwe, V. Ravat, N.J. Coville",
+      where: "Reaction Kinetics, Mechanisms and Catalysis 120, 543-554",
+      doi: "10.1007/s11144-016-1115-5" },
+
+    { year: 2016,
+      title: "Study of photoelectrochemical water splitting using composite films based on TiO 2 nanoparticles and nitrogen or boron doped hollow carbon spheres as photoanodes",
+      authors: "K. Ranganathan, A. Morais, I. Nongwe, C. Longo, A.F. Nogueira, N.J. Coville",
+      where: "Journal of Molecular Catalysis A: Chemical 422, 165-174",
+      doi: "10.1016/j.molcata.2015.10.024" },
+
+    { year: 2014,
+      title: "Synthesis of gold encapsulated in spherical carbon capsules with a mesoporous shell structure. A robust catalyst in a nanoreactor",
+      authors: "I. Nongwe, G. Bepete, A. Shaikjee, V. Ravat, B. Terfassa, R. Meijboom, N.J. Coville",
+      where: "Catalysis Communications 53, 77-82",
+      doi: "10.1016/j.catcom.2014.05.001" },
+
+    { year: 2013,
+      title: "Efficient and reusable Co/nitrogen doped hollow carbon sphere catalysts for the aerobic oxidation of styrene",
+      authors: "I. Nongwe, V. Ravat, R. Meijboom, N.J. Coville",
+      where: "Applied Catalysis A: General 466, 1-8",
+      doi: "10.1016/j.apcata.2013.06.014" },
+
+    { year: 2013,
+      title: "Pd on boron-doped hollow carbon spheres – PdO particle size and support effects",
+      authors: "V. Ravat, I. Nongwe, R. Meijboom, G. Bepete, N.J. Coville",
+      where: "Journal of Catalysis 305, 36-45",
+      doi: "10.1016/j.jcat.2013.04.018" },
+
+    { year: 2012,
+      title: "Palladium‐Supported Boron‐Doped Hollow Carbon Spheres as Catalysts for the Solvent‐free Aerobic Oxidation of Alcohols",
+      authors: "V. Ravat, I. Nongwe, N.J. Coville",
+      where: "ChemCatChem 4, 1930-1934",
+      doi: "10.1002/cctc.201200374" }
     ]
   },
 
