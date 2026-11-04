@@ -256,7 +256,7 @@ window.SITE = {
        
       { name: "Chawangwa Damba",
         role: " Materials and Processing, Intellectual Property expert",
-        org:  "BITRI",
+        org:  "B-CIRC/BITRI",
         photo: "chawangwa-damba.jpeg",
         focus: "Materials and IP specialist, owrking on converting waste and low-value resources into commercially viable materials. Hold and LL.M in intellectual Property. Materials and Processing. IP management and technology transfer.",
         link: "https://www.linkedin.com/in/chawangwa-d-8a506b49/" },
@@ -273,23 +273,23 @@ window.SITE = {
          Fill in a name when you have one, or delete the whole block.      */
       { name: "Dr. Mmilili M. Mapolelo",
         role: "Senior researcher. LCA",
-        org:  "BITRI",
+        org:  "B-CIRC/BITRI",
         photo: "myles.jpeg",
         focus: "Senior professional responsible for directing, executing, and overseeing Life Cycle Assessment studies. Evaluate the environmental footprint of a product, service, industrial process from cradle to grave",
         link: "https://www.linkedin.com/in/mmilili-mapolelo-5a077836/" },
 
       { name: "Nana A. Ntiamoah Pr. Eng",
         role: "Senior Engineer, Energy lead",
-        org:  "BITRI",
+        org:  "B-CIRC/BITRI",
         photo: "nana.jpeg",
         focus: "Electrical Engineer and renewable energy specialist. Implementing practical engineering and energy solutions. Renewable energy and energy access planning",
         link: "https://www.linkedin.com/in/nana-a-ntiamoah-pr-eng-b5780a49/" },
 
-      { name: "Open position",
-        role: "Computation and machine learning lead",
-        org:  "",
+      { name: "Nakale Kelapile",
+        role: "Senior Engineer, Electronics & Communication Lead",
+        org:  "B-CIRC/BITRI",
         photo: "",
-        focus: "Classical GNN and LSTM pipelines for ion migration barriers and capacity fade, with the quantum workstream alongside.",
+        focus: "electronics product development and system automation. ocus on system-level thinking and technical strategy. I turn complex communication challenges into scalable, reliable hardware solutions",
         link: "" }
     ]
   },
