@@ -265,7 +265,7 @@ window.SITE = {
         role: "Electrochemistry & Battery",
         org:  "University of South Africa",
         photo: "kabelo.jpeg",
-        focus: "Researching in Green Hydrogen, PEM Fuel Cell, Microbial Fuel Cell, Electrochemical, energy storage, Atomic Layer Deposition (ALD)Researching in Green Hydrogen, PEM Fuel Cell, Microbial Fuel Cell, Electrochemical, energy storage, Atomic Layer Deposition (ALD)",
+        focus: "Research in Green Hydrogen, PEM Fuel Cell, Microbial Fuel Cell, Electrochemical, energy storage, Atomic Layer Deposition (ALD)Researching in Green Hydrogen, PEM Fuel Cell, Microbial Fuel Cell, Electrochemical, energy storage, Atomic Layer Deposition (ALD)",
         link: ["https://orcid.org/0000-0003-1885-9879/", 
                "https://www.researchgate.net/profile/Kabelo-Ledwaba/", 
                "https://scholar.google.com/citations?user=sr10LFwAAAAJ&hl=en/"] },
