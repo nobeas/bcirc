@@ -289,7 +289,8 @@ window.SITE = {
         role: "Senior Engineer, Electronics & Communication Lead",
         org:  "B-CIRC/BITRI",
         photo: "nakale.jpeg",
-        focus: "electronics product development and system automation. Focus on system-level thinking and technical strategy. I turning complex communication challenges into scalable, reliable hardware solutions",
+        focus: "electronics product development and system automation. Focus on system-level thinking and technical strategy. 
+                I turning complex communication challenges into scalable, reliable hardware solutions",
         link: "https://www.linkedin.com/in/nakale-kelapile-77089748/" }
     ]
   },
