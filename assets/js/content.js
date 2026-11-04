@@ -271,9 +271,8 @@ window.SITE = {
 
       /* The roles below are the ones still open in the ISC3 submission.
          Fill in a name when you have one, or delete the whole block.      */
-      { name: "Senior Researcher",
-        role: "senior professional responsible for directing, executing, and overseeing Life Cycle Assessment studies. 
-               evaluate the environmental footprint of a product, service, industrial process from cradle to grave",
+      { name: "",
+        role: "Senior researcher. ",
         org:  "BITRI",
         photo: "",
         focus: "Lead Life Cycle Assessment Practitioner / Consultant",
