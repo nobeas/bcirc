@@ -250,8 +250,10 @@ window.SITE = {
         org:  "B-CIRC/BITRI",
         photo: "Isaac.jpeg",
         focus: "Flash Joule heating of Botswana coal to graphene, and Si@carbon device development. Co-author of the published TiO₂/NHCS photoelectrochemical proof of concept, which appeared under the name I. Nongwe.",
-        link: ["https://orcid.org/0000-0002-8636-7895","https://scholar.google.com/citations?user=enYxWVoAAAAJ&hl=fr"] },
-
+        links: ["https://orcid.org/0000-0002-8636-7895",
+                "https://scholar.google.com/citations?user=enYxWVoAAAAJ&hl=fr",
+                "https://www.linkedin.com/in/isaac-n-beas-ph-d-768939380"] },
+       
       { name: "Chawangwa Damba",
         role: " Materials and Processing, Intellectual Property expert",
         org:  "BITRI",
