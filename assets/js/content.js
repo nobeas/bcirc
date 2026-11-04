@@ -276,7 +276,7 @@ window.SITE = {
                evaluate the environmental footprint of a product, service, industrial process from cradle to grave",
         org:  "BITRI",
         photo: "",
-        focus: "CVD reactor design, nanotube and amorphous carbon deposition, Raman characterisation.",
+        focus: "Lead Life Cycle Assessment Practitioner / Consultant",
         link: "https://www.linkedin.com/in/mmilili-mapolelo-5a077836/" },
 
       { name: "Open position",
