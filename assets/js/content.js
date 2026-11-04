@@ -264,7 +264,7 @@ window.SITE = {
       { name: "Ledwaba Kabelo",
         role: "Electrochemistry & Battery",
         org:  "University of South Africa",
-        photo: "ledwaba-kabelo.jpg",
+        photo: "kabelo.jpeg",
         focus: "EDIT: one line on what this person leads on the project.",
         link: ["https://orcid.org/0000-0003-1885-9879/"
                "https://www.researchgate.net/profile/Kabelo-Ledwaba"/
