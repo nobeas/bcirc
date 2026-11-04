@@ -271,19 +271,19 @@ window.SITE = {
 
       /* The roles below are the ones still open in the ISC3 submission.
          Fill in a name when you have one, or delete the whole block.      */
-      { name: "Mmilili M. Mapolelo",
+      { name: "Dr. Mmilili M. Mapolelo",
         role: "Senior researcher. LCA",
         org:  "BITRI",
-        photo: "",
+        photo: "myles.jpeg",
         focus: "Senior professional responsible for directing, executing, and overseeing Life Cycle Assessment studies. Evaluate the environmental footprint of a product, service, industrial process from cradle to grave",
         link: "https://www.linkedin.com/in/mmilili-mapolelo-5a077836/" },
 
-      { name: "Open position",
-        role: "Green chemistry and biodegradation lead",
-        org:  "",
+      { name: "Nana A. Ntiamoah Pr. Eng",
+        role: "Senior Engineer, Energy lead",
+        org:  "BITRI",
         photo: "",
-        focus: "OECD protocols, degradation pathways by GC-MS and HPLC, REACH compliance.",
-        link: "" },
+        focus: "Electrical Engineer and renewable energy specialist. Implementing practical engineering and energy solutions. Renewable energy and energy access planning",
+        link: "https://www.linkedin.com/in/nana-a-ntiamoah-pr-eng-b5780a49/" },
 
       { name: "Open position",
         role: "Computation and machine learning lead",
