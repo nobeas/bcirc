@@ -271,12 +271,12 @@ window.SITE = {
 
       /* The roles below are the ones still open in the ISC3 submission.
          Fill in a name when you have one, or delete the whole block.      */
-      { name: "Open position",
-        role: "Carbon synthesis and CVD lead",
-        org:  "",
+      { name: "Senior Researcher",
+        role: "senior professional responsible for directing, executing, and overseeing Life Cycle Assessment studies. They evaluate the environmental footprint of a product, service, or industrial process from "cradle to grave" (or cradle-to-gate).",
+        org:  "BITRI",
         photo: "",
         focus: "CVD reactor design, nanotube and amorphous carbon deposition, Raman characterisation.",
-        link: "" },
+        link: "https://www.linkedin.com/in/mmilili-mapolelo-5a077836/" },
 
       { name: "Open position",
         role: "Green chemistry and biodegradation lead",
