@@ -248,9 +248,9 @@ window.SITE = {
       { name: "Dr Isaac N. Beas",
         role: "Principal investigator",
         org:  "B-CIRC/BITRI",
-        photo: "Isaac.jpeg",
+        photo: "isaac-beas.jpg",
         focus: "Flash Joule heating of Botswana coal to graphene, and Si@carbon device development. Co-author of the published TiO₂/NHCS photoelectrochemical proof of concept, which appeared under the name I. Nongwe.",
-        link: "https://scholar.google.com/citations?user=enYxWVoAAAAJ&hl=fr" },
+        link: "" },
 
       { name: "Chawangwa Damba",
         role: " Materials and Processing, Intellectual Property expert",
