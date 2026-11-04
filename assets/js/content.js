@@ -290,7 +290,7 @@ window.SITE = {
         org:  "B-CIRC/BITRI",
         photo: "nakale.jpeg",
         focus: "Electronics product development and system automation. Focus on system-level thinking and technical strategy",
-        link: "https://www.linkedin.com/in/nakale-kelapile-77089748/" }
+        link: "https://www.linkedin.com/in/nakale-kelapile-77089748/" },
     ]
   },
 
