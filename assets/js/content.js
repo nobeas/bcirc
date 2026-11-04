@@ -266,7 +266,7 @@ window.SITE = {
         org:  "University of South Africa",
         photo: "kabelo.jpeg",
         focus: "Research in Green Hydrogen, PEM Fuel Cell, Microbial Fuel Cell, Electrochemical, energy storage, Atomic Layer Deposition (ALD)Researching in Green Hydrogen, PEM Fuel Cell, Microbial Fuel Cell, Electrochemical, energy storage, Atomic Layer Deposition (ALD)",
-        link:  ["https://orcid.org/0000-0003-1885-9879/", "https://scholar.google.com/citations?user=sr10LFwAAAAJ&hl=en/"] },
+        links:  ["https://orcid.org/0000-0003-1885-9879/", "https://scholar.google.com/citations?user=sr10LFwAAAAJ&hl=en/"] },
 
       /* The roles below are the ones still open in the ISC3 submission.
          Fill in a name when you have one, or delete the whole block.      */
