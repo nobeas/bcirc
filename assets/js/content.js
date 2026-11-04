@@ -281,7 +281,7 @@ window.SITE = {
       { name: "Nana A. Ntiamoah Pr. Eng",
         role: "Senior Engineer, Energy lead",
         org:  "BITRI",
-        photo: "",
+        photo: "nana.jpg",
         focus: "Electrical Engineer and renewable energy specialist. Implementing practical engineering and energy solutions. Renewable energy and energy access planning",
         link: "https://www.linkedin.com/in/nana-a-ntiamoah-pr-eng-b5780a49/" },
 
