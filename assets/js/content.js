@@ -271,8 +271,8 @@ window.SITE = {
 
       /* The roles below are the ones still open in the ISC3 submission.
          Fill in a name when you have one, or delete the whole block.      */
-      { name: "",
-        role: "Senior researcher. LCA ",
+      { name: "Mmilili M. Mapolelo",
+        role: "Senior researcher. LCA",
         org:  "BITRI",
         photo: "",
         focus: "Senior professional responsible for directing, executing, and overseeing Life Cycle Assessment studies. Evaluate the environmental footprint of a product, service, industrial process from cradle to grave",
